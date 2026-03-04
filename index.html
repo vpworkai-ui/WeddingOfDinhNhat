@@ -3,22 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Định Nhật & Thu Hoài</title>
+
+<title>Định Nhật & Thu Hoài Wedding</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
 <style>
+
 body{
 margin:0;
 font-family:'Playfair Display', serif;
 background:#f9f8f6;
 color:#2b2b2b;
 scroll-behavior:smooth;
+overflow-x:hidden;
 }
+
+/* INTRO OPEN CARD */
+
+#intro{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#111;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:9999;
+color:white;
+text-align:center;
+}
+
+#intro h1{
+font-family:'Great Vibes';
+font-size:60px;
+margin:10px 0;
+}
+
+#intro button{
+padding:14px 40px;
+font-size:18px;
+background:#c6a15b;
+border:none;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+/* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url('anh1.jpg');
+background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('anh1.jpg');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -30,70 +68,71 @@ text-align:center;
 }
 
 .hero h1{
-font-family:'Great Vibes', cursive;
+font-family:'Great Vibes';
 font-size:80px;
 margin:0;
 }
 
-.gold{ color:#c6a15b; }
+.hero p{
+font-size:22px;
+letter-spacing:3px;
+}
+
+.gold{
+color:#c6a15b;
+}
+
+/* SECTION */
 
 .section{
-padding:100px 20px;
+padding:90px 20px;
 text-align:center;
+opacity:0;
+transform:translateY(40px);
+transition:1s;
 }
 
-.gallery img{
-width:80%;
-margin:20px auto;
-display:block;
-border-radius:15px;
+.section.show{
+opacity:1;
+transform:translateY(0);
 }
+
+/* BIG DATE */
+
+.big-date{
+font-size:48px;
+font-weight:700;
+color:#c6a15b;
+margin:15px 0;
+}
+
+/* COUNTDOWN */
 
 .countdown{
-font-size:28px;
+font-size:32px;
 margin-top:20px;
 }
 
-.button{
-padding:12px 25px;
-border:1px solid #c6a15b;
-color:#c6a15b;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
-cursor:pointer;
+/* GALLERY */
+
+.gallery img{
+width:85%;
+margin:25px auto;
+display:block;
+border-radius:12px;
 }
 
-.button:hover{
-background:#c6a15b;
-color:white;
-}
-
-.qr-box{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:40px;
-}
-
-.qr-box img{
-width:200px;
-border-radius:10px;
-}
+/* MAP */
 
 iframe{
 width:90%;
-height:300px;
+height:320px;
 border:0;
 border-radius:15px;
 margin-top:20px;
 }
 
-.footer{
-background:#111;
-color:white;
-padding:40px;
-}
+/* MUSIC BUTTON */
 
 .music-btn{
 position:fixed;
@@ -106,66 +145,136 @@ border-radius:50px;
 cursor:pointer;
 }
 
+/* FLOWER FALL */
+
+.petals{
+position:fixed;
+top:-10px;
+width:10px;
+height:10px;
+background:pink;
+opacity:0.7;
+border-radius:50%;
+animation:fall linear infinite;
+}
+
+@keyframes fall{
+to{
+transform:translateY(110vh);
+}
+}
+
+.footer{
+background:#111;
+color:white;
+padding:40px;
+text-align:center;
+}
+
+.gold-shimmer {
+background: linear-gradient(
+90deg,
+#c6a15b 0%,
+#f3d9a5 50%,
+#c6a15b 100%
+);
+background-size: 200% auto;
+color: #c6a15b;
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+to {
+background-position: 200% center;
+}
+}
+
 </style>
 </head>
 
 <body>
 
-<audio id="music" autoplay loop>
+<!-- INTRO -->
+
+<div id="intro">
+<div>
+<h2>Thiệp Cưới</h2>
+<h1>Định Nhật & Thu Hoài</h1>
+<p>Nhấn để mở thiệp</p>
+<br>
+<button onclick="openInvite()">Mở Thiệp</button>
+</div>
+</div>
+
+<audio id="music" loop>
 <source src="music.mp3" type="audio/mpeg">
 </audio>
 
 <div class="music-btn" onclick="toggleMusic()">🎵</div>
 
+<!-- HERO -->
+
 <div class="hero">
-<h1>Định Nhật & Thu Hoài</h1>
+<h1 class="gold-shimmer">Đình Nhật & Thu Hoài</h1>
 <p>14 • 03 • 2026</p>
 </div>
 
+<!-- LỊCH -->
+
 <div class="section">
+
 <h2 class="gold">Lịch Cưới</h2>
-<p><strong>Lễ Vu Quy:</strong> 16:30 - 13.03.2026</p>
+
+<p>Lễ Vu Quy</p>
+<div class="big-date">16:30 • 13.03.2026</div>
 <p>An Động - Tân Chi - Bắc Ninh</p>
 
-<p><strong>Lễ Thành Hôn:</strong> 15:00 - 14.03.2026</p>
+<br>
+
+<p>Lễ Thành Hôn</p>
+<div class="big-date">15:00 • 14.03.2026</div>
 <p>Dương Lôi - Từ Sơn - Bắc Ninh</p>
+
 </div>
 
+<!-- COUNTDOWN -->
+
 <div class="section">
-<h2 class="gold">Đếm Ngược</h2>
+
+<h2 class="gold">Đếm Ngược Ngày Cưới</h2>
 <div class="countdown" id="countdown"></div>
+
 </div>
 
+<!-- ALBUM -->
+
 <div class="section">
+
 <h2 class="gold">Album Cưới</h2>
+
 <div class="gallery">
 <img src="anh2.jpg">
 <img src="anh3.jpg">
 <img src="anh4.jpg">
 <img src="anh5.jpg">
 </div>
+
 </div>
 
-<div class="section">
-<h2 class="gold">Mừng Cưới</h2>
-<div class="qr-box">
-<div>
-<p>QR Nhà Gái</p>
-<img src="qr-nhagai.png">
-</div>
-<div>
-<p>QR Nhà Trai</p>
-<img src="qr-nhatrai.png">
-</div>
-</div>
-</div>
+<!-- MAP -->
 
 <div class="section">
+
 <h2 class="gold">Bản Đồ Nhà Gái</h2>
+
 <iframe src="https://www.google.com/maps?q=An Động Tân Chi Bắc Ninh&output=embed"></iframe>
 
 <h2 class="gold">Bản Đồ Nhà Trai</h2>
+
 <iframe src="https://www.google.com/maps?q=Dương Lôi Từ Sơn Bắc Ninh&output=embed"></iframe>
+
 </div>
 
 <div class="footer">
@@ -173,23 +282,88 @@ cursor:pointer;
 </div>
 
 <script>
+
+/* OPEN INVITE */
+
+function openInvite(){
+document.getElementById("intro").style.display="none";
+document.getElementById("music").play();
+createPetals();
+}
+
+/* MUSIC */
+
+function toggleMusic(){
+var music=document.getElementById("music");
+if(music.paused){
+music.play();
+}else{
+music.pause();
+}
+}
+
+/* COUNTDOWN */
+
 var weddingDate = new Date("March 14, 2026 15:00:00").getTime();
+
 setInterval(function(){
+
 var now = new Date().getTime();
+
 var distance = weddingDate - now;
+
 var days = Math.floor(distance / (1000*60*60*24));
 var hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
 var minutes = Math.floor((distance % (1000*60*60))/(1000*60));
 var seconds = Math.floor((distance % (1000*60))/1000);
+
 document.getElementById("countdown").innerHTML =
 days+" ngày "+hours+" giờ "+minutes+" phút "+seconds+" giây";
+
 },1000);
 
-function toggleMusic(){
-var music=document.getElementById("music");
-if(music.paused){ music.play(); }
-else{ music.pause(); }
+/* SCROLL ANIMATION */
+
+var sections=document.querySelectorAll(".section");
+
+window.addEventListener("scroll",()=>{
+
+sections.forEach(sec=>{
+
+var top=sec.getBoundingClientRect().top;
+
+if(top<window.innerHeight-100){
+
+sec.classList.add("show");
+
 }
+
+});
+
+});
+
+/* FLOWER EFFECT */
+
+function createPetals(){
+
+for(let i=0;i<20;i++){
+
+let petal=document.createElement("div");
+
+petal.classList.add("petals");
+
+petal.style.left=Math.random()*100+"%";
+
+petal.style.animationDuration=(5+Math.random()*5)+"s";
+
+petal.style.background=["#ffc0cb","#ffb6c1","#ffd1dc"][Math.floor(Math.random()*3)];
+
+document.body.appendChild(petal);
+
+}
+
+}
+
 </script>
 
 </body>
