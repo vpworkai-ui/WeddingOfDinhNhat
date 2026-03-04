@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Định Nhật & Thu Hoài Wedding</title>
+<title>Đình Nhật & Thu Hoài Wedding</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
 
@@ -19,7 +19,7 @@ scroll-behavior:smooth;
 overflow-x:hidden;
 }
 
-/* INTRO OPEN CARD */
+/* INTRO */
 
 #intro{
 position:fixed;
@@ -69,23 +69,44 @@ text-align:center;
 
 .hero h1{
 font-family:'Great Vibes';
-font-size:80px;
+font-size:60px;
 margin:0;
 }
 
 .hero p{
-font-size:22px;
+font-size:20px;
 letter-spacing:3px;
 }
+
+/* GOLD */
 
 .gold{
 color:#c6a15b;
 }
 
+.gold-shimmer{
+background:linear-gradient(
+90deg,
+#c6a15b 0%,
+#f3d9a5 50%,
+#c6a15b 100%
+);
+background-size:200% auto;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:shimmer 4s linear infinite;
+}
+
+@keyframes shimmer{
+to{
+background-position:200% center;
+}
+}
+
 /* SECTION */
 
 .section{
-padding:90px 20px;
+padding:80px 20px;
 text-align:center;
 opacity:0;
 transform:translateY(40px);
@@ -100,7 +121,7 @@ transform:translateY(0);
 /* BIG DATE */
 
 .big-date{
-font-size:48px;
+font-size:36px;
 font-weight:700;
 color:#c6a15b;
 margin:15px 0;
@@ -109,7 +130,7 @@ margin:15px 0;
 /* COUNTDOWN */
 
 .countdown{
-font-size:32px;
+font-size:28px;
 margin-top:20px;
 }
 
@@ -126,26 +147,33 @@ border-radius:12px;
 
 iframe{
 width:90%;
-height:320px;
+height:280px;
 border:0;
-border-radius:15px;
+border-radius:20px;
 margin-top:20px;
+box-shadow:0 8px 20px rgba(0,0,0,0.1);
 }
 
-/* MUSIC BUTTON */
+/* MUSIC */
 
 .music-btn{
 position:fixed;
-bottom:20px;
+top:20px;
 right:20px;
 background:#c6a15b;
 color:white;
-padding:10px 15px;
-border-radius:50px;
+width:44px;
+height:44px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
 cursor:pointer;
+z-index:99999;
+box-shadow:0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* FLOWER FALL */
+/* PETALS */
 
 .petals{
 position:fixed;
@@ -164,6 +192,8 @@ transform:translateY(110vh);
 }
 }
 
+/* FOOTER */
+
 .footer{
 background:#111;
 color:white;
@@ -171,26 +201,93 @@ padding:40px;
 text-align:center;
 }
 
-.gold-shimmer {
-background: linear-gradient(
-90deg,
-#c6a15b 0%,
-#f3d9a5 50%,
-#c6a15b 100%
-);
-background-size: 200% auto;
-color: #c6a15b;
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-animation: shimmer 4s linear infinite;
+/* MOBILE */
+
+@media (max-width:768px){
+
+.hero h1{
+font-size:42px;
 }
 
-@keyframes shimmer {
-to {
-background-position: 200% center;
-}
+.big-date{
+font-size:30px;
 }
 
+.countdown{
+font-size:22px;
+}
+
+iframe{
+height:230px;
+}
+
+}
+
+.timeline{
+position:relative;
+max-width:500px;
+margin:auto;
+padding-left:25px;
+border-left:3px solid #ddd;
+}
+
+.timeline-item{
+margin-bottom:40px;
+position:relative;
+}
+
+.timeline-dot{
+width:16px;
+height:16px;
+border-radius:50%;
+position:absolute;
+left:-11px;
+top:6px;
+}
+
+/* Vu Quy */
+
+.vuquy .timeline-dot{
+background:#e89cae;
+}
+
+.vuquy .event{
+color:#e89cae;
+font-weight:600;
+}
+
+/* Thành Hôn */
+
+.thanhhon .timeline-dot{
+background:#c6a15b;
+}
+
+.thanhhon .event{
+color:#c6a15b;
+font-weight:600;
+}
+
+.timeline-content h3{
+margin:0;
+font-size:20px;
+}
+.scroll-arrow{
+font-size:30px;
+color:#c6a15b;
+position:absolute;
+bottom:30px;
+animation:arrowMove 2s infinite;
+}
+
+@keyframes arrowMove{
+
+0%{transform:translateY(0)}
+
+50%{transform:translateY(10px)}
+
+100%{transform:translateY(0)}
+
+}
 </style>
 </head>
 
@@ -201,7 +298,7 @@ background-position: 200% center;
 <div id="intro">
 <div>
 <h2>Thiệp Cưới</h2>
-<h1>Định Nhật & Thu Hoài</h1>
+<h1>Đình Nhật & Thu Hoài</h1>
 <p>Nhấn để mở thiệp</p>
 <br>
 <button onclick="openInvite()">Mở Thiệp</button>
@@ -217,8 +314,13 @@ background-position: 200% center;
 <!-- HERO -->
 
 <div class="hero">
-<h1 class="gold-shimmer">Đình Nhật & Thu Hoài</h1>
+
+<h1 class="gold-shimmer">Định Nhật</h1>
+<h1 class="gold-shimmer">&</h1>
+<h1 class="gold-shimmer">Thu Hoài</h1>
+
 <p>14 • 03 • 2026</p>
+
 </div>
 
 <!-- LỊCH -->
@@ -227,18 +329,45 @@ background-position: 200% center;
 
 <h2 class="gold">Lịch Cưới</h2>
 
-<p>Lễ Vu Quy</p>
-<div class="big-date">16:30 • 13.03.2026</div>
+<div class="timeline">
+
+<div class="timeline-item vuquy">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>13.03.2026</h3>
+
+<p class="event">💍 Lễ Vu Quy</p>
+
+<p>16:30</p>
+
 <p>An Động - Tân Chi - Bắc Ninh</p>
 
-<br>
+</div>
 
-<p>Lễ Thành Hôn</p>
-<div class="big-date">15:00 • 14.03.2026</div>
+</div>
+
+<div class="timeline-item thanhhon">
+
+<div class="timeline-dot"></div>
+
+<div class="timeline-content">
+
+<h3>14.03.2026</h3>
+
+<p class="event">💐 Lễ Thành Hôn</p>
+
+<p>15:00</p>
+
 <p>Dương Lôi - Từ Sơn - Bắc Ninh</p>
 
 </div>
 
+</div>
+
+</div>
 <!-- COUNTDOWN -->
 
 <div class="section">
@@ -332,7 +461,7 @@ sections.forEach(sec=>{
 
 var top=sec.getBoundingClientRect().top;
 
-if(top<window.innerHeight-100){
+if(top<window.innerHeight-150){
 
 sec.classList.add("show");
 
@@ -342,7 +471,7 @@ sec.classList.add("show");
 
 });
 
-/* FLOWER EFFECT */
+/* PETALS */
 
 function createPetals(){
 
@@ -360,9 +489,7 @@ petal.style.background=["#ffc0cb","#ffb6c1","#ffd1dc"][Math.floor(Math.random()*
 
 document.body.appendChild(petal);
 
-}
-
-}
+}}
 
 </script>
 
