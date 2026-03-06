@@ -278,26 +278,46 @@
 
         }
 
-        .timeline {
+        .wedding-card {
+            background: #fff;
+            padding: 40px 35px;
+            max-width: 650px;
+            margin: 40px auto;
+            border-radius: 14px;
+            border: 1.5px solid #e5d3a3;
             position: relative;
-            max-width: 500px;
+        }
+
+        .wedding-card::before {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            right: 12px;
+            bottom: 12px;
+            border: 1px solid #f1e2b8;
+            border-radius: 10px;
+            pointer-events: none;
+        }
+
+        .timeline-item:not(:last-child) {
+            border-bottom: 1px dashed #e6d6ad;
+            padding-bottom: 20px;
+        }
+
+        .timeline {
+            max-width: 600px;
             margin: auto;
-            padding-left: 25px;
-            border-left: 3px solid #ddd;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
-            position: relative;
+            margin: 28px 0;
+            text-align: center;
         }
 
-        .timeline-dot {
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            position: absolute;
-            left: -11px;
-            top: 6px;
+        .timeline-item h3 {
+            color: #c6a15b;
+            margin-bottom: 8px;
         }
 
         /* LightBox */
@@ -510,216 +530,220 @@
 
         <h2 class="gold">Lịch Cưới</h2>
 
-        <div class="timeline">
+        <div class="wedding-card">
 
-            <div class="timeline-item vuquy">
+            <div class="timeline">
 
-                <div class="timeline-dot"></div>
+                <div class="timeline-item">
 
-                <div class="timeline-content">
+                    <h3>💐 Lễ Thành Hôn</h3>
 
-                    <h3>13.03.2026</h3>
+                    <p>
+                        Được tổ chức tại <b>Tư Gia Nhà Trai</b>
+                    </p>
 
-                    <p class="event">💍 Lễ Vu Quy</p>
+                    <p>📅 Ngày 14/03/2026</p>
 
-                    <p>16:30</p>
-
-                    <p>An Động - Tân Chi - Bắc Ninh</p>
-
-                </div>
-
-            </div>
-
-            <div class="timeline-item thanhhon">
-
-                <div class="timeline-dot"></div>
-
-                <div class="timeline-content">
-
-                    <h3>14.03.2026</h3>
-
-                    <p class="event">💐 Lễ Thành Hôn</p>
-
-                    <p>15:00</p>
-
-                    <p>Dương Lôi - Từ Sơn - Bắc Ninh</p>
+                    <p>⏰ 15:00</p>
 
                 </div>
 
-            </div>
+                <div class="timeline-item">
 
-        </div>
-        <!-- COUNTDOWN -->
+                    <h3>🍾 Tiệc Cưới</h3>
 
-        <div class="section">
+                    <p>📅 13/03/2026</p>
 
-            <h2 class="gold">Đếm Ngược Ngày Cưới</h2>
-            <div class="countdown" id="countdown"></div>
+                    <p>⏰ 10:00</p>
 
-        </div>
+                    <p>Dương Lôi – Từ Sơn – Bắc Ninh</p>
 
-        <!-- ALBUM -->
+                </div>
 
-        <div class="section">
+                <div class="timeline-item">
 
-            <h2 class="gold">Album Ảnh Cưới</h2>
-            <div class="masonry">
-                <img src="anh1.jpg" onclick="openLightbox(this)">
-                <img src="anh2.jpg" onclick="openLightbox(this)">
-                <img src="anh3.jpg" onclick="openLightbox(this)">
-                <img src="anh4.jpg" onclick="openLightbox(this)">
-                <img src="anh5.jpg" onclick="openLightbox(this)">
-            
-            </div>
+                    <h3>💍 Lễ Vu Quy</h3>
 
-        </div>
+                    <p>Được tổ chức tại <b>Tư Gia Nhà Gái</b></p>
 
-        <!-- MAP -->
+                    <p>📅 14/03/2026</p>
 
-        <div class="section">
+                    <p>⏰ 13:30</p>
 
-            <h2 class="gold">Bản Đồ Nhà Gái</h2>
+                </div>
 
-            <iframe src="https://www.google.com/maps?q=An Động Tân Chi Bắc Ninh&output=embed"></iframe>
-
-            <h2 class="gold">Bản Đồ Nhà Trai</h2>
-
-            <iframe src="https://www.google.com/maps?q=Dương Lôi Từ Sơn Bắc Ninh&output=embed"></iframe>
-
-        </div>
-
-        <div class="footer">
-            <div class="section thankyou">
-                <h2 class="gold">Lời Cảm Ơn</h2>
-                <p class="thank-text">
-                    Chúng tôi chân thành cảm ơn<br>
-                    Quý gia đình, bạn bè và người thân<br>
-                    đã dành thời gian quý báu<br>
-                    đến chung vui và chúc phúc cho chúng tôi.
-                </p>
-                <p class="thank-text">
-                    Sự hiện diện của quý vị<br>
-                    là niềm vinh hạnh và hạnh phúc lớn lao<br>
-                    đối với gia đình chúng tôi.
-                </p>
-                <p class="couple-sign">
-                    Đình Nhật & Thu Hoài
-                </p>
-                <p>
-                    💍 14.03.2026 💍
-                </p>
+                <div class="timeline-item">
+                    <h3>🍾 Tiệc Cưới</h3>
+                    <p>📅 13/03/2026</p>
+                    <p>⏰ 16:30</p>
+                    <p>An Động – Tân Chi – Bắc Ninh</p>
+                </div>
             </div>
         </div>
+    </div>
 
-        <script>
+    <!-- ALBUM -->
 
-            /* OPEN INVITE */
+    <div class="section">
 
-            function openInvite() {
-                document.getElementById("intro").style.display = "none";
-                document.getElementById("music").play();
-                createPetals();
+        <h2 class="gold">Album Ảnh Cưới</h2>
+        <div class="masonry">
+            <img src="anh1.jpg" onclick="openLightbox(this)">
+            <img src="anh2.jpg" onclick="openLightbox(this)">
+            <img src="anh3.jpg" onclick="openLightbox(this)">
+            <img src="anh4.jpg" onclick="openLightbox(this)">
+            <img src="anh5.jpg" onclick="openLightbox(this)">
+
+        </div>
+
+    </div>
+
+    <!-- MAP -->
+
+    <div class="section">
+
+        <h2 class="gold">Bản Đồ Nhà Gái</h2>
+
+        <iframe src="https://www.google.com/maps?q=An Động Tân Chi Bắc Ninh&output=embed"></iframe>
+
+        <h2 class="gold">Bản Đồ Nhà Trai</h2>
+
+        <iframe src="https://www.google.com/maps?q=Dương Lôi Từ Sơn Bắc Ninh&output=embed"></iframe>
+
+    </div>
+
+    <div class="footer">
+        <div class="section thankyou">
+            <h2 class="gold">Lời Cảm Ơn</h2>
+            <p class="thank-text">
+                Chúng tôi chân thành cảm ơn<br>
+                Quý gia đình, bạn bè và người thân<br>
+                đã dành thời gian quý báu<br>
+                đến chung vui và chúc phúc cho chúng tôi.
+            </p>
+            <p class="thank-text">
+                Sự hiện diện của quý vị<br>
+                là niềm vinh hạnh và hạnh phúc lớn lao<br>
+                đối với gia đình chúng tôi.
+            </p>
+            <p class="couple-sign">
+                Đình Nhật & Thu Hoài
+            </p>
+            <p>
+                💍 14.03.2026 💍
+            </p>
+        </div>
+    </div>
+
+    <script>
+
+        /* OPEN INVITE */
+
+        function openInvite() {
+            document.getElementById("intro").style.display = "none";
+            document.getElementById("music").play();
+            createPetals();
+        }
+
+        /* MUSIC */
+
+        function toggleMusic() {
+            var music = document.getElementById("music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
             }
+        }
 
-            /* MUSIC */
+        /* COUNTDOWN */
 
-            function toggleMusic() {
-                var music = document.getElementById("music");
-                if (music.paused) {
-                    music.play();
-                } else {
-                    music.pause();
+        var weddingDate = new Date("March 14, 2026 15:00:00").getTime();
+
+        setInterval(function () {
+
+            var now = new Date().getTime();
+
+            var distance = weddingDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("countdown").innerHTML =
+                days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
+
+        }, 1000);
+
+        /* SCROLL ANIMATION */
+
+        var sections = document.querySelectorAll(".section");
+
+        window.addEventListener("scroll", () => {
+
+            sections.forEach(sec => {
+
+                var top = sec.getBoundingClientRect().top;
+
+                if (top < window.innerHeight - 150) {
+
+                    sec.classList.add("show");
+
                 }
-            }
-
-            /* COUNTDOWN */
-
-            var weddingDate = new Date("March 14, 2026 15:00:00").getTime();
-
-            setInterval(function () {
-
-                var now = new Date().getTime();
-
-                var distance = weddingDate - now;
-
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-                document.getElementById("countdown").innerHTML =
-                    days + " ngày " + hours + " giờ " + minutes + " phút " + seconds + " giây";
-
-            }, 1000);
-
-            /* SCROLL ANIMATION */
-
-            var sections = document.querySelectorAll(".section");
-
-            window.addEventListener("scroll", () => {
-
-                sections.forEach(sec => {
-
-                    var top = sec.getBoundingClientRect().top;
-
-                    if (top < window.innerHeight - 150) {
-
-                        sec.classList.add("show");
-
-                    }
-
-                });
 
             });
 
-            /* PETALS */
+        });
 
-            function createPetals() {
+        /* PETALS */
 
-                for (let i = 0; i < 20; i++) {
+        function createPetals() {
 
-                    let petal = document.createElement("div");
+            for (let i = 0; i < 20; i++) {
 
-                    petal.classList.add("petals");
+                let petal = document.createElement("div");
 
-                    petal.style.left = Math.random() * 100 + "%";
+                petal.classList.add("petals");
 
-                    petal.style.animationDuration = (5 + Math.random() * 5) + "s";
+                petal.style.left = Math.random() * 100 + "%";
 
-                    petal.style.background = ["#ffc0cb", "#ffb6c1", "#ffd1dc"][Math.floor(Math.random() * 3)];
+                petal.style.animationDuration = (5 + Math.random() * 5) + "s";
 
-                    document.body.appendChild(petal);
+                petal.style.background = ["#ffc0cb", "#ffb6c1", "#ffd1dc"][Math.floor(Math.random() * 3)];
 
-                }
+                document.body.appendChild(petal);
+
             }
+        }
 
-            function openLightbox(img) {
-                document.getElementById("lightbox").style.display = "flex";
-                document.getElementById("lightbox-img").src = img.src;
+        function openLightbox(img) {
+            document.getElementById("lightbox").style.display = "flex";
+            document.getElementById("lightbox-img").src = img.src;
+        }
+
+        function closeLightbox() {
+            document.getElementById("lightbox").style.display = "none";
+        }
+
+        let slides = document.querySelectorAll(".slide");
+        let current = 0;
+
+        function nextSlide() {
+            slides[current].classList.remove("active");
+            current++;
+            if (current >= slides.length) {
+                current = 0;
             }
+            slides[current].classList.add("active");
+        }
+        setInterval(nextSlide, 4000);
 
-            function closeLightbox() {
-                document.getElementById("lightbox").style.display = "none";
-            }
+    </script>
 
-            let slides = document.querySelectorAll(".slide");
-            let current = 0;
-
-            function nextSlide() {
-                slides[current].classList.remove("active");
-                current++;
-                if (current >= slides.length) {
-                    current = 0;
-                }
-                slides[current].classList.add("active");
-            }
-            setInterval(nextSlide, 4000);
-
-        </script>
-
-        <div id="lightbox" onclick="closeLightbox()">
-            <img id="lightbox-img">
-        </div>
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img">
+    </div>
 </body>
 
 </html>
